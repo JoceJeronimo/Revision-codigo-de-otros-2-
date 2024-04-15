@@ -12,13 +12,15 @@
   <h1>Bienvenidos a mi fiesta</h1>
   <h2>Por favor, confirmar asistencia:</h2>
 
-  <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
+  <form class="formulario" id="formId"> <!-- Se le agrego el id para poder seleccionar correctamente en el script -->
+  <label>Nombre</label>   <!--Se le agrego la etiqueta de label-->
+  <input type="text" name="name" id="name">
     <br />
-    Edad <input type="number" name="age" id="age">
+  <label>Edad</label>    <!--Se le agrego la etiqueta de label-->
+  <input type="number" name="age" id="age">
     <br />
 
-    Nacionalidad
+    <label>Nacionalidad</label>  <!--Se le agrego la etiqueta de label-->
     <select name="nationality" id="nationality">
       <option value="ar">Argentina</option>
       <option value="mx">Mexicana</option>

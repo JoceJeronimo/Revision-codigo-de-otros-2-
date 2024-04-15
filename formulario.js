@@ -1,97 +1,95 @@
-var formulario = document.querySelector("#form")
+let formulario = document.getElementById("formId"); // se agrego un id al formulario para su seleccion correcta
+formulario.onsubmit = function(event) {
 
-formulario.onsubmit = function(e) {
-
-  e.prevent();
+  event.preventDefault(); // se le cambio el prevent por un preventDefault para prevenir el comportamiento predeterminado del formulario //se le agrego el ; 
   
-  var n = formulario.elements[0]
-  var e = formulario.elements[1]
-  var na = formulario.elements[2]
+  let n = formulario.elements[0]; // cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+  let e = formulario.elements[1];// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+  let na = formulario.elements[2];// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
 
-  var nombre = n.value
-  var edad = e.value
+  let nombre = n.value;// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+  let edad = e.value;// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
 
-  var i = na.selectedIndex
-  var nacionalidad = na.options[i].value
-  console.log(nombre, edad)
-  console.log(nacionalidad)
+  let i = na.selectedIndex;// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+  let nacionalidad = na.options[i].value;// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+  console.log(nombre, edad);//se le agrego el ; 
+  console.log(nacionalidad);//se le agrego el ; 
 
   if (nombre.length === 0) {
-    n.classList.add("error")
+    n.classList.add("error");//se le agrego el ; 
   }
   if (edad < 18 || edad > 120) {
-    e.classList.add("error")
+    e.classList.add("error");//se le agrego el ; 
   }
 
-if (nombre.length > 0 
-  && (edad > 18 
-    && edad < 120) ) {
-  agregarInvitado(nombre, edad, nacionalidad)
+if (nombre.length > 0 && (edad > 18 && edad < 120) ) {
+  agregarInvitado(nombre, edad, nacionalidad);//se le agrego el ; 
   }
 }
 
-var botonBorrar = document.createElement("button")
-botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
-var corteLinea = document.createElement("br")
-document.body.appendChild(corteLinea)
-document.body.appendChild(botonBorrar);
+let botonBorrar = document.createElement("button");//se le agrego el ; 
+botonBorrar.textContent = "Eliminar invitado";//se le agrego el ; 
+botonBorrar.id = "boton-borrar";//se le agrego el ; 
+let corteLinea = document.createElement("br");//se le agrego el ; 
+document.body.appendChild(corteLinea);//se le agrego el ; 
+document.body.appendChild(botonBorrar);//se le agrego el ; 
 
 function agregarInvitado(nombre, edad, nacionalidad) {
 
   if (nacionalidad === "ar") {
-    nacionalidad = "Argentina"
+    nacionalidad = "Argentina";//se le agrego el ; 
   }
   else if (nacionalidad === "mx") {
-    nacionalidad = "Mexicana"
+    nacionalidad = "Mexicana";//se le agrego el ; 
   }
   else if (nacionalidad === "vnzl") {
-    nacionalidad = "Venezolana"
+    nacionalidad = "Venezolana";//se le agrego el ; 
   }
   else if (nacionalidad === "per") {
-    nacionalidad = "Peruana"
+    nacionalidad = "Peruana";//se le agrego el ; 
   }
 
-var lista = document.getElementById("lista-de-invitados")
+let lista = document.getElementById("lista-de-invitados");// cambie el tipo de la variable por let ya que se encontraba declarada como var y se le agrego el ; 
 
-var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
-lista.appendChild(elementoLista)
+let elementoLista = document.createElement("div");// cambie el tipo de la variable por let ya que se encontraba declarada como var y se le agrego el ; 
+elementoLista.classList.add("elemento-lista"); // se modifico la pabra added por add, ya que added no es una forma correcta del metodo classList y se le agrego el ; 
+lista.appendChild(elementoLista); //se le agrego el ; 
 
-var spanNombre = document.createElement("span")
-var inputNombre = document.createElement("input")
-var espacio = document.createElement("br")
-spanNombre.textContent = "Nombre: "
-inputNombre.value = nombre 
-elementoLista.appendChild(spanNombre)
-elementoLista.appendChild(inputNombre)
-elementoLista.appendChild(espacio)
+let spanNombre = document.createElement("span");// cambie el tipo de la variable por let ya que se encontraba declarada como var 
+let inputNombre = document.createElement("input");// cambie el tipo de la variable por let ya que se encontraba declarada como var 
+let espacio = document.createElement("br");// cambie el tipo de la variable por let ya que se encontraba declarada como var 
+//El siguiente bloque de codigo esta repetido en la funcion crearElemento 
+/*spanNombre.textContent = "Nombre: "
+inputNombre.value = nombre ;
+elementoLista.appendChild(spanNombre);//se le agrego el ; 
+elementoLista.appendChild(inputNombre);//se le agrego el ; 
+elementoLista.appendChild(espacio); //se le agrego el ; */  
 
 function crearElemento(descripcion, valor) {
-var spanNombre = document.createElement("span")
-var inputNombre = document.createElement("input")
-var espacio = document.createElement("br")
+let spanNombre = document.createElement("span");// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+let inputNombre = document.createElement("input");// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
+let espacio = document.createElement("br");// cambie el tipo de la variable por let ya que se encontraba declarada como var //se le agrego el ; 
 spanNombre.textContent = descripcion + ": "
-inputNombre.value = valor 
-elementoLista.appendChild(spanNombre)
-elementoLista.appendChild(inputNombre)
-elementoLista.appendChild(espacio)
+inputNombre.value = valor ;//se le agrego el ; 
+elementoLista.appendChild(spanNombre);//se le agrego el ; 
+elementoLista.appendChild(inputNombre);//se le agrego el ; 
+elementoLista.appendChild(espacio);//se le agrego el ; 
 }
 
-crearElemento("Nombre", nombre)
-crearElemento("Edad", edad)
-crearElemento("Nacionalidad", nacionalidad)
+crearElemento("Nombre", nombre);
+crearElemento("Edad", edad);
+crearElemento("Nacionalidad", nacionalidad);
 
 
-var botonBorrar = document.createElement("button")
-botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
-var corteLinea = document.createElement("br")
-elementoLista.appendChild(corteLinea)
+let botonBorrar = document.createElement("button");// cambie el tipo de la variable por let ya que se encontraba declarada como var 
+botonBorrar.textContent = "Eliminar invitado";
+botonBorrar.id = "boton-borrar";
+let corteLinea = document.createElement("br"); // cambie el tipo de la variable por let ya que se encontraba declarada como var 
+elementoLista.appendChild(corteLinea);
 elementoLista.appendChild(botonBorrar);
 
  botonBorrar.onclick = function() {
 // this.parentNode.style.display = 'none';
-botonBorrar.parentNode.remove()
+botonBorrar.parentNode.remove();
   }
 }
